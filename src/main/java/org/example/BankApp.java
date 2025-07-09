@@ -68,6 +68,11 @@ public class BankApp {
         double deposit = scanner.nextDouble();
         scanner.nextLine();
 
+        if (deposit < 1) {
+            System.out.println("Invalid deposit amount.");
+            return;
+        }
+
         Account acc;
         if (type.equals("savings")) {
             acc = new SavingsAccount(accNum, name);
